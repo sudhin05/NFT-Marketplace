@@ -60,7 +60,7 @@ contract NFTMarketplace is ERC721URIStorage {
         return listingPrice;
     }
 
-    // Let create "CREATE NFT TOKEN FUNCTION"
+    //"CREATE NFT TOKEN FUNCTION"
 
     function createToken(string memory tokenURI, uint256 price)
         public
@@ -79,7 +79,7 @@ contract NFTMarketplace is ERC721URIStorage {
         return newTokenId;
     }
 
-    //CREATING MARKET ITEMS
+    //CREATE MARKET ITEMS
 
     function createMarketItem(uint256 tokenId, uint256 price) private {
         require(price > 0, "Price must be al lest 1");
@@ -107,7 +107,7 @@ contract NFTMarketplace is ERC721URIStorage {
         );
     }
 
-    //FUNCTION FOR RESALE TOKEN
+    //RESALE TOKEN FUNCTION
     function reSellToken(uint256 tokenId, uint256 price) public payable {
         require(
             idMarketItem[tokenId].owner == msg.sender,
@@ -129,7 +129,7 @@ contract NFTMarketplace is ERC721URIStorage {
         _transfer(msg.sender, address(this), tokenId);
     }
 
-    //FUNCTION CREATEMARKETSALE
+    /CREATEMARKETSALE FUNCTION
 
     function createMarketSale(uint256 tokenId) public payable {
         uint256 price = idMarketItem[tokenId].price;
@@ -151,7 +151,7 @@ contract NFTMarketplace is ERC721URIStorage {
         payable(idMarketItem[tokenId].seller).transfer(msg.value);
     }
 
-    //GETTING UNSOLD NFT DATA
+    //GET UNSOLD NFT DATA FUNCTION
     function fetchMarketItem() public view returns (MarketItem[] memory) {
         uint256 itemCount = _tokenIds.current();
         uint256 unSoldItemCount = _tokenIds.current() - _itmesSold.current();
@@ -170,7 +170,7 @@ contract NFTMarketplace is ERC721URIStorage {
         return items;
     }
 
-    //PURCHASE ITEM
+    //PURCHASE ITEM FUNCTION
     function fetchMyNFT() public view returns (MarketItem[] memory) {
         uint256 totalCount = _tokenIds.current();
         uint256 itemCount = 0;
@@ -194,7 +194,7 @@ contract NFTMarketplace is ERC721URIStorage {
         return items;
     }
 
-    //SINGULE USER ITEMS
+    //SINGLE USER ITEMS FUNCTION
     function fetchItemsListed() public view returns (MarketItem[] memory) {
         uint256 totalCount = _tokenIds.current();
         uint256 itemCount = 0;
