@@ -1,0 +1,124 @@
+
+.box_category{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.category{
+    padding: 4rem 0;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+    justify-content: center; /* Center-align the grid */
+    margin: 0 auto; /* Additional centering */
+}
+
+.category_box{
+    line-height: 0;
+    transition: all .3s ease-in;
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    padding-bottom: 1rem;
+}
+
+.category_box:hover{
+    box-shadow: var(--box-shadow);
+}
+
+.category_box_images {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+
+  }
+/*Small Boxes*/
+.small_box {
+    width: 50px;
+    height: 25px;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  .small_box_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .more_box {
+    width: 50px; /* Adjust the width as needed */
+    height: 25px; /* Adjust the height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eee;
+    border-radius: 8px;
+    color: #070000;
+  }
+/*End of small boxes*/
+.category_box_title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center; /* Center-align the text */
+}
+
+.category_box_title span {
+    font-size: 3rem;
+    margin-top: 1rem;
+}
+
+.category_box_title_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category_box_title_info h4 {
+    margin-bottom: 0.5rem; /* Adjust the margin as needed */
+}
+
+.category_box_title_info small {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 0.5rem; /* Adjust the margin as needed */
+}
+/*Collection Header*/
+.collection_header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .collection_header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .collection_header p {
+    font-size: 1rem;
+    color: #888; /* Subtitle color */
+  }
+
+@media screen and (min-device-width: 320px) and (max-device-width: 425px) {
+
+    .box_category{
+        width: 90%;
+    }
+    .category{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-device-width: 427px) and (max-device-width: 770px) {
+    .category{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (min-device-width: 772px) and (max-device-width: 1025px) {
+    .category{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
