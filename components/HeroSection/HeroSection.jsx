@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect, useContext} from "react";
 import Image from "next/image";
 import { FaSpaceShuttle } from "react-icons/fa";
 
@@ -7,12 +7,17 @@ import Style from "./HeroSection.module.css";
 import { Button } from "../componentsindex";
 import images from "../../img";
 
+//SMART CONTRACT IMPORT
+import { NFTMarketplaceContext } from "../../Context/NFTMarketplaceContext";
+
+
 const HeroSection = () => {
+  const { titleData } = useContext(NFTMarketplaceContext);
   return (
     <div className={Style.heroSection}>
       <div className={Style.heroSection_box}>
         <div className={Style.heroSection_box_left} style={{width: '90%', paddingleft: '10%', paddingright: '10%', alignself: 'center'}}>
-          <h1>Explore digital art & NFTs</h1>
+          <h1>{titleData}</h1>
           <p>
             Ingenefty Marketplace. Collect, buy and sell art from NFT artists.
           </p>
