@@ -1,4 +1,4 @@
-.container-fluid {
+.container {
   background-image: url(https://images.unsplash.com/photo-1524334228333-0f6db392f8a1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
   height: 100%;
   width: 100%;
@@ -7,11 +7,12 @@
   background-size: cover;
   position: relative;
   min-height: 600px;
-  padding: 100px;
+  padding-top: 5rem;
 }
 
-.main-card {
-  width: 300px;
+.card {
+  max-width: 25rem;
+  width: 80%;
   height: 400px;
   border-radius: 25px;
   border-style: solid;
@@ -20,19 +21,28 @@
   backdrop-filter: blur(1vmax);
   align-items: center;
   margin: auto;
+  justify-content: center;
 }
 
-.btn {
+.walletbtn {
   display: flex;
   border-radius: 4px;
   border-color: aliceblue;
   border-radius: 5px;
   align-items: center;
+  background-color: transparent;
+  width: 80%;
+  justify-content: center;
 }
 
 
 
-.wallet-name {
-  margin: 10px;
+.name {
+  margin: 1rem;
   color: aliceblue;
+}
+
+.metamask{
+  width: 3rem;
+
 }

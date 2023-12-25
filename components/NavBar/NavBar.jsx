@@ -1,167 +1,60 @@
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import Link from "next/link";
-//----IMPORT ICON
-import { MdNotifications } from "react-icons/md";
-import { BsSearch } from "react-icons/bs";
-import { CgMenuLeft, CgMenuRight } from "react-icons/cg";
+import React, { Component } from 'react';
+import Style from './NavBar.module.css';
 
-//INTERNAL IMPORT
-import Style from "./NavBar.module.css";
-import { Discover, HelpCenter, Notification, Profile, SideBar } from "./index";
-import { Button } from "../componentsindex";
-import images from "../../img";
+import ReactDOM from 'react-dom/client';
 
-const NavBar = () => {
-  //----USESTATE COMPONNTS
-  const [discover, setDiscover] = useState(false);
-  const [help, setHelp] = useState(false);
-  const [notification, setNotification] = useState(false);
-  const [profile, setProfile] = useState(false);
-  const [openSideMenu, setOpenSideMenu] = useState(false);
+import { FiAlignRight } from "react-icons/fi";
+import { CgProfile } from "react-icons/cg";
+import { FaSearch } from "react-icons/fa";
+import { IoIosCart } from "react-icons/io";
+import { render } from 'react-dom';
 
-  const openMenu = (e) => {
-    const btnText = e.target.innerText;
-    if (btnText == "Explore") {
-      setDiscover(true);
-      setHelp(false);
-      setNotification(false);
-      setProfile(false);
-    } else if (btnText == "Help Center") {
-      setDiscover(false);
-      setHelp(true);
-      setNotification(false);
-      setProfile(false);
-    } else {
-      setDiscover(false);
-      setHelp(false);
-      setNotification(false);
-      setProfile(false);
+function NavBar() {
+    const open = () => {
+        dropdown.classList.toggle('open')
     }
-  };
-
-  const openNotification = () => {
-    if (!notification) {
-      setNotification(true);
-      setDiscover(false);
-      setHelp(false);
-      setProfile(false);
-    } else {
-      setNotification(false);
-    }
-  };
-
-  const openProfile = () => {
-    if (!profile) {
-      setProfile(true);
-      setHelp(false);
-      setDiscover(false);
-      setNotification(false);
-    } else {
-      setProfile(false);
-    }
-  };
-
-  const openSideBar = () => {
-    if (!openSideMenu) {
-      setOpenSideMenu(true);
-    } else {
-      setOpenSideMenu(false);
-    }
-  };
-
-  return (
-    <div className={Style.navbar}>
-      <div className={Style.navbar_container}>
-        <div className={Style.navbar_container_left}>
-          <div className={Style.logo}>
-            <Image
-              src={images.logo}
-              alt="NFT MARKET PLACE"
-              width={120}
-              height={50}
-            />
-          </div>
-          <div className={Style.navbar_container_left_box_input}>
-            <div className={Style.navbar_container_left_box_input_box}>
-              <input type="text" placeholder="Search NFT" />
-              <BsSearch onClick={() => {}} className={Style.search_icon} />
+    return ( 
+        <>
+        <div className={Style.navbar}>
+            <div className={Style.logo}>NFT Marketplace</div>
+            <div className={Style.search}>
+                <input className={Style.input} type="text" placeholder='Search...'/>
+                <button className={Style.button}><FaSearch size={16}/></button>
+                
             </div>
-          </div>
-        </div>
-
-        {/* //END OF LEFT SECTION */}
-        <div className={Style.navbar_container_right}>
-          <div className={Style.navbar_container_right_discover}>
-            {/* DISCOVER MENU */}
-            <p onClick={(e) => openMenu(e)}>Explore</p>
-            {discover && (
-              <div className={Style.navbar_container_right_discover_box}>
-                <Discover />
-              </div>
-            )}
-          </div>
-
-          {/* HELP CENTER MENU */}
-          <div className={Style.navbar_container_right_help}>
-            <p onClick={(e) => openMenu(e)}>Help Center</p>
-            {help && (
-              <div className={Style.navbar_container_right_help_box}>
-                <HelpCenter />
-              </div>
-            )}
-          </div>
-
-          {/* NOTIFICATION */}
-          <div className={Style.navbar_container_right_notify}>
-            <MdNotifications
-              className={Style.notify}
-              onClick={() => openNotification()}
-            />
-            {notification && <Notification />}
-          </div>
-
-          {/* CREATE BUTTON SECTION */}
-          <div className={Style.navbar_container_right_button}>
-            <Button btnName="Create" handleClick={() => {}} />
-          </div>
-
-          {/* USER PROFILE */}
-
-          <div className={Style.navbar_container_right_profile_box}>
-            <div className={Style.navbar_container_right_profile}>
-              <Image
-                src={images.user1}
-                alt="Profile"
-                width={40}
-                height={40}
-                onClick={() => openProfile()}
-                className={Style.navbar_container_right_profile}
-              />
-
-              {profile && <Profile />}
+            <ul className={Style.links}>
+            <ul><a href="MarketPlace">MarketPlace</a></ul>
+            <ul><a href="createnft">Create</a></ul>
+            <ul><a href="profile"><CgProfile size={24}/></a></ul>
+            <ul><a href="cart"><IoIosCart size={24}/> </a></ul>
+            </ul>
+            <div className={Style.togglebtn}>
+            <FiAlignRight size={24}/>
             </div>
-          </div>
-
-          {/* MENU BUTTON */}
-
-          <div className={Style.navbar_container_right_menuBtn}>
-            <CgMenuRight
-              className={Style.menuIcon}
-              onClick={() => openSideBar()}
-            />
-          </div>
+        
         </div>
-      </div>
+         <div className={Style.dropdown} onClick={open} id='dropdown'>
+         <ul className={Style.links}>
+         <ul><a href="MarketPlace">MarketPlace</a></ul>
+         <ul><a href="createnft">Create</a></ul>
+         <ul><a href="profile"><CgProfile style={{marginRight: "10px"}} size={24}/> Profile</a></ul>
+         <ul><a href="cart"><IoIosCart style={{marginRight: "10px"}} size={24}/> Cart </a></ul>
+         </ul>
+         </div>
+         {/* <script>
+         const togglebtn = document.querySelector(".togglebtn")
+         // const togglebtnicon = document.querySelector(".togglebtn")
+         const dropdown = document.querySelector(".dropdown")
 
-      {/* SIDBAR CPMPONE/NT */}
-      {openSideMenu && (
-        <div className={Style.sideBar}>
-          <SideBar setOpenSideMenu={setOpenSideMenu} />
-        </div>
-      )}
-    </div>
-  );
-};
+        togglebtn.onclick = function () {
+            dropdown.classList.toggle('open')
+        }
+         </script> */}
+         </>
+     );
+}
+
+// let dropdown =   ReactDOM.createRoot( document.getElementsById("dropdown"));
+// dropdown.render(<NavBar/>)
 
 export default NavBar;

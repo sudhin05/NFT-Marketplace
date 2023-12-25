@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import React from 'react';
 import { ethers } from 'ethers';
-import { connect } from '../components/conn/connect';
+import { Connect } from "../components/componentsindex";
 
 function SignIn() {
 
@@ -55,7 +55,7 @@ function SignIn() {
         >Request Account</button>
         <h3>Wallet Address: {walletAddress}</h3>
       </header>
-      <connect/>
+      <Connect/>
 
     </div>
     </React.StrictMode>

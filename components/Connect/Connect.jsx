@@ -7,19 +7,20 @@ const Connect = () => {
   return (
     <div>
         <div
-  className="container-fluid"
+  className={Style.container}
 >
-  <div className="main-card"
+  <div className={Style.card}
   >
     <h2>Connect wallet</h2>
     <p>
       Choose a wallet you want to connect. There are several wallet providers.
     </p>
-    <button className="btn" >
+    <button className={Style.walletbtn} >
       <svg
+
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 212 189"
-        id="metamask"
+        className={Style.metamask}
       >
         <g fill="none" fill-rule="evenodd">
           <polygon
@@ -149,7 +150,7 @@ const Connect = () => {
             ></path>
           </g>
         </g>
-      </svg> <h4 className="wallet-name">Metamask</h4>
+      </svg> <h2 className={Style.name}>Metamask</h2>
     </button>
   </div>
 </div>

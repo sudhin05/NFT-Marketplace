@@ -8,11 +8,11 @@ import { Button } from "../componentsindex";
 import images from "../../img";
 
 //SMART CONTRACT IMPORT
-import { NFTMarketplaceContext } from "../../Context/NFTMarketplaceContext";
+import { NFTMarketplaceConnect } from "../../connect/NFTMarketplaceConnect";
 
 
 const HeroSection = () => {
-  const { titleData } = useContext(NFTMarketplaceContext);
+  const titleData  = useContext(NFTMarketplaceConnect);
   return (
     <div className={Style.heroSection}>
       <div className={Style.heroSection_box}>
