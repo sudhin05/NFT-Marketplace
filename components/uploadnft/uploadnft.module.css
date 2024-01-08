@@ -1,0 +1,95 @@
+.content {
+  display: flex;
+  align-items: center;
+}
+
+.uploadbox {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  align-items: center;
+  height: 40vw;
+  min-width: 240px;
+  min-height: 240px;
+  max-width: 40rem;
+  max-height: 40rem;
+  justify-content: center;
+  border-radius: 20px;
+  border-style: dotted;
+  border: 2px aliceblue solid;
+  margin: 5rem;
+}
+
+.uploadinfo {
+  color: rgb(80, 80, 80);
+  text-align: center;
+}
+
+.uploaddetails {
+  flex-direction: column;
+  display: flex;
+  width: 600px
+}
+
+.tag {
+  font-size: large;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.input {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: white;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  margin-bottom: 2rem;
+}
+
+.desc .input{
+    border: 2px solid gray;
+    height: 10rem;
+    padding: 1rem;
+    border-radius: 20px;
+}
+
+.button{
+    margin: 20px;
+}
+
+.uploadboxbtn{
+  display: grid;
+  grid-template-columns: repeat(1, 0fr);
+  margin-block: 4rem;
+  gap: 2rem;
+}
+
+.uploadboxbtnstyle{
+  width: 100%;
+  display: grid;
+  align-self: center;
+  font-size: 1.3rem;
+}
+
+
+
+
+
+
+@media (max-width: 700px) {
+    .content{
+        flex-direction: column;
+    }
+    .uploaddetails{
+        width: 80vw;
+    }
+    .uploadbox{
+        width: 60vw;
+        height: 60vw;
+    }
+}

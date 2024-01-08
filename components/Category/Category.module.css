@@ -85,18 +85,18 @@
     text-align: center;
     margin-top: 0.5rem; /* Adjust the margin as needed */
 }
-/*Collection Header*/
-.collection_header {
+/*category Header*/
+.category_header {
     text-align: center;
     margin-bottom: 2rem;
   }
   
-  .collection_header h1 {
+  .category_header h1 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
   }
   
-  .collection_header p {
+  .category_header p {
     font-size: 1rem;
     color: #888; /* Subtitle color */
   }

@@ -1,0 +1,27 @@
+
+
+.title{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.title_box h1{
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.title_box p {
+    font-size: 1rem;
+    color: #888; 
+  }
+
+@media screen and (min-device-width: 320px) and (max-device-width: 425px) {
+    .title_box{
+        width: 90%;
+    }
+
+    .title_box h2{
+        font-size: 1.8rem;
+        line-height: 0;
+    }
+}

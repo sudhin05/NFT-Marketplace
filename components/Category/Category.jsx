@@ -94,7 +94,7 @@ const Category = () => {
 
   return (
     <div className={Style.box_category}>
-      <div className={Style.collection_header}>
+      <div className={Style.category_header}>
       <h1>Trending Collection</h1>
       <p>Checkout Our Weekly Updated Trending Collection.</p>
       </div>

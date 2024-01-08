@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect, useContext} from "react";
 import Image from "next/image";
 import { FaSpaceShuttle } from "react-icons/fa";
 
@@ -6,6 +6,10 @@ import { FaSpaceShuttle } from "react-icons/fa";
 import Style from "./HeroSection.module.css";
 import { Button } from "../componentsindex";
 import images from "../../img";
+
+//SMART CONTRACT IMPORT
+import { NFTMarketplaceContext } from "../../Context/NFTMarketplaceContext";
+
 
 const HeroSection = () => {
   return (
@@ -23,6 +27,7 @@ const HeroSection = () => {
           <Image
             src={images.hero}
             alt="Hero section"
+            priority={true}
             style={{width:'100%',borderradius: 'inherit', height: 'fit-content',borderbottomrightradius: '0px',borderbottomleftradius: '0px'}}
           />
         </div>
