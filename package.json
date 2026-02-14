@@ -11,7 +11,7 @@
   "dependencies": {
     "ether": "^0.0.9",
     "hardhat": "^2.11.2",
-    "next": "14.0.4",
+    "next": "15.5.10",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.12.0",
